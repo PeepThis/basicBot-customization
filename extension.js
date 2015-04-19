@@ -1,6 +1,6 @@
 (function () {
     //Link location of your fork so you don't have to modify so many things.
-    var fork = "Yemasthui";
+    var fork = "PeepThis";
 		
     //Define our function responsible for extending the bot.
     function extend() {
@@ -21,7 +21,7 @@
 
          bot.commands.commandCommand = {
          command: 'cmd',
-         rank: 'user/bouncer/mod/manager',
+         rank: 'manager',
          type: 'startsWith/exact',
          functionality: function(chat, cmd){
          if(this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -34,18 +34,18 @@
 
          */
 
-        bot.commands.baconCommand = {
-            command: 'bacon',  //The command to be called. With the standard command literal this would be: !bacon
-            rank: 'user', //Minimum user permission to use the command
+        bot.commands.@DeepBotCommand = {
+            command: '@Deep Bot',  //The command to be called. With the standard command literal this would be: @Deep Bot
+            rank: 'Manager', //Minimum user permission to use the command
             type: 'exact', //Specify if it can accept variables or not (if so, these have to be handled yourself through the chat.message
             functionality: function (chat, cmd) {
                 if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                 if (!bot.commands.executable(this.rank, chat)) return void (0);
                 else {
-                    API.sendChat("/me Bacon!!!");
-                }
-            }
-        };
+                    API.sendChat("Dont bug me");
+                }API.sendChat("I love my owner");
+            }API.sendChat("I have to poop");
+        };API.sendChat("EDM is bae");
 
         //Load the chat package again to account for any changes
         bot.loadChat();
@@ -55,11 +55,11 @@
     //Change the bots default settings and make sure they are loaded on launch
 
     localStorage.setItem("basicBotsettings", JSON.stringify({
-        botName: "basicBot",
+        botName: "Deep Bot",
         language: "english",
-        startupCap: 1, // 1-200
-        startupVolume: 0, // 0-100
-        startupEmoji: false, // true or false
+        startupCap: 50, // 1-200
+        startupVolume: 100, // 0-100
+        startupEmoji: true, // true or false
         cmdDeletion: true,
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
         maximumAfk: 120,
@@ -72,8 +72,8 @@
         maximumLocktime: 10,
         cycleGuard: true,
         maximumCycletime: 10,
-        voteSkip: false,
-        voteSkipLimit: 10,
+        voteSkip: true,
+        voteSkipLimit: 15,
         timeGuard: true,
         maximumSongLength: 10,
         autodisable: true,
@@ -93,7 +93,7 @@
         afkRankCheck: "ambassador",
         motdEnabled: false,
         motdInterval: 5,
-        motd: "Temporary Message of the Day",
+        motd: "I like to rave",
         filterChat: true,
         etaRestriction: false,
         welcome: true,
@@ -114,6 +114,6 @@
     }));
 
     //Start the bot and extend it when it has loaded.
-    $.getScript("https://rawgit.com/Yemasthui/basicBot/master/basicBot.js", extend);
+    $.getScript("https://rawgit.com/PeepThis/DeepBot/master/DeepBot.js", extend);
 
 }).call(this);
