@@ -1,6 +1,6 @@
 (function () {
     //Link location of your fork so you don't have to modify so many things.
-    var fork = "Yemasthui";
+    var fork = "PeepThis";
 		
     //Define our function responsible for extending the bot.
     function extend() {
@@ -34,15 +34,15 @@
 
          */
 
-        bot.commands.baconCommand = {
-            command: 'bacon',  //The command to be called. With the standard command literal this would be: !bacon
+        bot.commands.botCommand = {
+            command: 'bot',  //The command to be called. With the standard command literal this would be: !bot
             rank: 'user', //Minimum user permission to use the command
             type: 'exact', //Specify if it can accept variables or not (if so, these have to be handled yourself through the chat.message
             functionality: function (chat, cmd) {
                 if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                 if (!bot.commands.executable(this.rank, chat)) return void (0);
                 else {
-                    API.sendChat("/me Bacon!!!");
+                    API.sendChat("/no");("/i have to poop");("/edm is bae");("hi")
                 }
             }
         };
@@ -54,12 +54,12 @@
 
     //Change the bots default settings and make sure they are loaded on launch
 
-    localStorage.setItem("basicBotsettings", JSON.stringify({
-        botName: "basicBot",
+    localStorage.setItem("deepbotsettings", JSON.stringify({
+        botName: "deepbot",
         language: "english",
-        startupCap: 1, // 1-200
-        startupVolume: 0, // 0-100
-        startupEmoji: false, // true or false
+        startupCap: 50, // 1-200
+        startupVolume: 100, // 0-100
+        startupEmoji: true, // true or false
         cmdDeletion: true,
         chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
         maximumAfk: 120,
@@ -72,8 +72,8 @@
         maximumLocktime: 10,
         cycleGuard: true,
         maximumCycletime: 10,
-        voteSkip: false,
-        voteSkipLimit: 10,
+        voteSkip: true,
+        voteSkipLimit: 11,
         timeGuard: true,
         maximumSongLength: 10,
         autodisable: true,
@@ -114,6 +114,6 @@
     }));
 
     //Start the bot and extend it when it has loaded.
-    $.getScript("https://rawgit.com/Yemasthui/basicBot/master/basicBot.js", extend);
+    $.getScript("https://rawgit.com/PeepThis/basicBot/master/basicBot.js", extend);
 
 }).call(this);
